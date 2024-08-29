@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyPeIzdhs9ERwuWDKeoDHMY2",
+      "authorship_tag": "ABX9TyNg7li+YQR3uvXSaximpwq2",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -47,33 +47,40 @@
       "source": [
         "import math\n",
         "\n",
-        "def minimax_search(game, state):\n",
+        "def alphabeta_search(game, state):\n",
         "    \"\"\"\n",
-        "    Search game tree to determine the best move; return (value, move) pair.\n",
+        "    Search game to determine the best action; use alpha-beta pruning.\n",
+        "    Search all the way to the leaves.\n",
         "    \"\"\"\n",
         "    player = state.to_move\n",
         "\n",
-        "    def max_value(state):\n",
+        "    def max_value(state, alpha, beta):\n",
         "        if game.is_terminal(state):\n",
         "            return game.utility(state, player), None\n",
         "        v, move = -math.inf, None\n",
         "        for a in game.actions(state):\n",
-        "            v2, _ = min_value(game.result(state, a))\n",
+        "            v2, _ = min_value(game.result(state, a), alpha, beta)\n",
         "            if v2 > v:\n",
         "                v, move = v2, a\n",
+        "            alpha = max(alpha, v)\n",
+        "            if v >= beta:\n",
+        "                return v, move\n",
         "        return v, move\n",
         "\n",
-        "    def min_value(state):\n",
+        "    def min_value(state, alpha, beta):\n",
         "        if game.is_terminal(state):\n",
         "            return game.utility(state, player), None\n",
         "        v, move = math.inf, None\n",
         "        for a in game.actions(state):\n",
-        "            v2, _ = max_value(game.result(state, a))\n",
+        "            v2, _ = max_value(game.result(state, a), alpha, beta)\n",
         "            if v2 < v:\n",
         "                v, move = v2, a\n",
+        "            beta = min(beta, v)\n",
+        "            if v <= alpha:\n",
+        "                return v, move\n",
         "        return v, move\n",
         "\n",
-        "    return max_value(state)"
+        "    return max_value(state, -math.inf, math.inf)"
       ],
       "metadata": {
         "id": "0W5YvPmv5ct7"
