@@ -4,3 +4,4 @@ lab2
 [https://github.com/Akshay3306/23CSBTB-27/blob/main/Untitled6.ipynb]
 lab3
 [https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3]
+[https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3]
