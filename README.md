@@ -7,3 +7,5 @@ lab3
 [https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3]
 [https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3]
 [https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3]
+lab5
+[https://github.com/Akshay3306/23CSBTB-27/blob/main/lab5.ipynb]
