@@ -10,3 +10,4 @@
 
 8. [https://github.com/Akshay3306/23CSBTB-27/blob/main/lab5.ipynb]
 9. [https://github.com/Akshay3306/23CSBTB-27/blob/main/Lab4.ipynb]
+10. [https://github.com/Akshay3306/23CSBTB-27/blob/main/LAB_1.ipynb]
