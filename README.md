@@ -1,5 +1,5 @@
 
-1. [https://github.com/Akshay3306/23CSBTB-27/blob/main/LAB2.ipynb]
+1. <a href = "https://github.com/Akshay3306/23CSBTB-27/blob/main/LAB2.ipynb">Lab - 2</a>
 2. [https://github.com/Akshay3306/23CSBTB-27/blob/main/BFS.ipynb]
 3. [https://github.com/Akshay3306/23CSBTB-27/blob/main/Untitled6.ipynb]
 
