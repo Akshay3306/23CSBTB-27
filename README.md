@@ -1,7 +1,5 @@
 1.<a href="https://github.com/Akshay3306/23CSBTB-27/blob/main/LAB_1.ipynb"> Lab -1</a><br>
 2.<a href ="https://github.com/Akshay3306/23CSBTB-27/blob/main/lab_2.ipynb">Lab - 2</a><br>
-3.<a href ="https://github.com/Akshay3306/23CSBTB-27/blob/main/BFS.ipynb"> Lab -2 </a><br>
-4.<a href ="https://github.com/Akshay3306/23CSBTB-27/blob/main/Untitled6.ipynb"> Lab -2</a><br>
 5.<a href ="https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3"> Lab -3</a><br>
 6.<a href ="https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3"> Lab -3</a><br>
 7.<a href ="https://github.com/Akshay3306/23CSBTB-27/blob/main/lab3"> Lab -3</a><br>
