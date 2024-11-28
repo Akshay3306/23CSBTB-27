@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .survey-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .survey-buttons button {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .survey-buttons button:hover {
+            background-color: #45a049;
+        }
+        .questions-container {
+            margin-top: 20px;
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .questions-container h2 {
+            color: #333;
+        }
+        .question {
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button.submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Choose a Survey</h1>
+
+<div class="survey-buttons">
+    <button onclick="showSurveyQuestions('marketResearch')">Market Research Surveys</button>
+    <button onclick="showSurveyQuestions('customerSatisfaction')">Customer Satisfaction Surveys</button>
+    <button onclick="showSurveyQuestions('employeeEngagement')">Employee Engagement Surveys</button>
+    <button onclick="showSurveyQuestions('politicalOpinion')">Political Opinion Polls</button>
+    <button onclick="showSurveyQuestions('governmentFeedback')">Government Feedback Surveys</button>
+    <button onclick="showSurveyQuestions('educationStudent')">Education and Student Surveys</button>
+    <button onclick="showSurveyQuestions('healthcare')">Healthcare Surveys</button>
+    <button onclick="showSurveyQuestions('productFeedback')">Product Feedback Surveys</button>
+    <button onclick="showSurveyQuestions('socialResearch')">Social Research Surveys</button>
+    <button onclick="showSurveyQuestions('brandPerception')">Brand Perception Surveys</button>
+    <button onclick="showSurveyQuestions('customerExperience')">Customer Experience Surveys (CX)</button>
+    <button onclick="showSurveyQuestions('eventFeedback')">Event Feedback Surveys</button>
+    <button onclick="showSurveyQuestions('consumerSentiment')">Consumer Sentiment Surveys</button>
+    <button onclick="showSurveyQuestions('travelTourism')">Travel and Tourism Surveys</button>
+    <button onclick="showSurveyQuestions('consumerBehavior')">Consumer Behavior Surveys</button>
+    <button onclick="showSurveyQuestions('financialInclusion')">Financial Inclusion Surveys</button>
+    <button onclick="showSurveyQuestions('realEstate')">Real Estate Surveys</button>
+    <button onclick="showSurveyQuestions('consumerAdvocacy')">Consumer Advocacy Surveys</button>
+    <button onclick="showSurveyQuestions('telecomUsage')">Telecom and Internet Usage Surveys</button>
+    <button onclick="showSurveyQuestions('sportsEntertainment')">Sports and Entertainment Surveys</button>
+</div>
+
+<div class="questions-container" id="questions-container">
+    <h2 id="survey-title"></h2>
+    <div id="questions"></div>
+    <button class="submit" onclick="submitSurvey()">Submit Survey</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        window.showSurveyQuestions = function(surveyType) {
+            const surveyData = {
+                marketResearch: { title: "Market Research Surveys", questions: ["What is the target market?", "What trends do you see?", "How do you analyze behavior?"] },
+                customerSatisfaction: { title: "Customer Satisfaction Surveys", questions: ["How satisfied are you?", "What can we improve?", "Would you recommend us?"] },
+                employeeEngagement: { title: "Employee Engagement Surveys", questions: ["How engaged are you?", "What motivates you?", "Is your opinion valued?"] },
+                politicalOpinion: { title: "Political Opinion Polls", questions: ["Your opinion on leadership?", "Thoughts on policies?", "Who will you vote for?"] },
+                governmentFeedback: { title: "Government Feedback Surveys", questions: ["Rate government performance?", "Improvements needed?", "Are your needs addressed?"] }
+            };
+
+            const survey = surveyData[surveyType];
+            if (survey) {
+                document.getElementById("survey-title").textContent = survey.title;
+                const questionsContainer = document.getElementById("questions");
+                questionsContainer.innerHTML = "";
+                survey.questions.forEach((question, index) => {
+                    const questionDiv = document.createElement("div");
+                    questionDiv.className = "question";
+                    questionDiv.innerHTML = `<label>${question}</label><br><input type="text" name="question${index}" required>`;
+                    questionsContainer.appendChild(questionDiv);
+                });
+                document.getElementById("questions-container").style.display = "block";
+            }
+        };
+
+        window.submitSurvey = function() {
+            const responses = [];
+            document.querySelectorAll('.question input').forEach(input => responses.push(input.value));
+            console.log('Survey Responses:', responses);
+            window.location.href = "thank-you.html";
+        };
+    });
+</script>
+
+</body>
+</html>
